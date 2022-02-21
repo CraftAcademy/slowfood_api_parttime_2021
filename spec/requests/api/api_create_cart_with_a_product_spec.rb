@@ -1,5 +1,5 @@
 RSpec.describe 'POST /api/carts', type: :request do
-  let!(:user) { create(:user) }
+  let!(:users) { create(:user) }
   let!(:products) { create(:product) }
   subject { response }
   before do
@@ -13,7 +13,7 @@ RSpec.describe 'POST /api/carts', type: :request do
   end
 
   it 'is expected to associate order with user' do
-    expect(@order.user).to eq user
+    expect(@cart.user).to eq user
   end
 
   it 'is expected to create an cart_item' do
